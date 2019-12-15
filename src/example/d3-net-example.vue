@@ -10,6 +10,7 @@
     :linkCb="linkCb"
     :node-sym='nodeSym'
     @node-click="nodeClick"
+    @node-dblclick="nodeDblClick"
     @link-click="linkClick"
     @screen-shot='screenShotDone'
     )
@@ -263,6 +264,10 @@ export default {
           break
       }
       this.updateSelection()
+      console.log('clicked node')
+    },
+    nodeDblClick (event, node) {
+      console.log('Double Clicked')
     },
     linkClick (event, link) {
       if (this.tool === 'killer') {
